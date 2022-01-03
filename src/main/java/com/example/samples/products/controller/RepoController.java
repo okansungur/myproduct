@@ -1,5 +1,7 @@
-package com.example.samples.products;
+package com.example.samples.products.controller;
 
+import com.example.samples.products.entity.Product;
+import com.example.samples.products.service.ProductServiceImplementation;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.*;
@@ -20,10 +22,9 @@ public class RepoController {
 
     @GetMapping("/hello")
     public String sayHello() {
-        logger.info("hello service is called" );
-        return "Hello From Java ";
-    }
 
+        return "Hello";
+    }
 
     @GetMapping("/products")
     public List<Product> getproducts() {

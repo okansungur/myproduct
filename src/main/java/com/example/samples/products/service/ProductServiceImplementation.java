@@ -1,26 +1,25 @@
-package com.example.samples.products;
+package com.example.samples.products.service;
 
-import org.springframework.beans.factory.annotation.*;
-import org.springframework.stereotype.*;
-
-import javax.persistence.*;
-import javax.transaction.Transactional;
-
+import com.example.samples.products.entity.Product;
+import com.example.samples.products.repository.ProductRepository;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import java.util.*;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
+import java.util.List;
 
 @Service
 @Transactional
-
 public class ProductServiceImplementation implements ProductService {
     private static final Logger logger = LogManager.getLogger(ProductServiceImplementation.class);
     @PersistenceContext
     private EntityManager entityManager;
     @Autowired
     ProductRepository productRepository;
-
 
     @Override
     public List<Product> findOrderedByProductsLimited(int limit) {
@@ -30,10 +29,7 @@ public class ProductServiceImplementation implements ProductService {
 
     public List<Product> getAllProducts() {
         return productRepository.findAll();
-
     }
-
-
 }
 
 

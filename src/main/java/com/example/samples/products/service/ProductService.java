@@ -1,4 +1,6 @@
-package com.example.samples.products;
+package com.example.samples.products.service;
+
+import com.example.samples.products.entity.Product;
 
 import java.util.*;
 

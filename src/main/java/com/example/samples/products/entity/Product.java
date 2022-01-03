@@ -1,4 +1,4 @@
-package com.example.samples.products;
+package com.example.samples.products.entity;
 
 
 import javax.persistence.*;
